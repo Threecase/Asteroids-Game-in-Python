@@ -1,7 +1,5 @@
 
-import threading
-import time
-import random
+import threading, time, random
 
 class Particle(object):
     'Object for Particles'

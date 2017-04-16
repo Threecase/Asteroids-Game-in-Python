@@ -1,5 +1,5 @@
 
-import time, threading, winsound, random
+import time, threading, random
 
 class MovingText(object):
     'Object for Moving Text'
@@ -11,7 +11,6 @@ class MovingText(object):
         self.trailDict = {}
         self.threads = []
         self.col = ['red','orange','yellow','orange']
-        winsound.PlaySound(random.choice([r"Sound\PrettyGood.wav",r"Sound\Wow.wav",r"Sound\Noice.wav",r"Sound\Nooo.wav"]),winsound.SND_FILENAME|winsound.SND_ASYNC)
 
         for i in range(length):
             self.trailDict[i] = canvas.create_text(x,y, text=text, font=font)
