@@ -1,6 +1,6 @@
 
 from Classes import shot, particle
-import time, threading, random, winsound
+import time, threading, random
 
 class Player(object):
     'Object for Player'
@@ -138,7 +138,6 @@ class Player(object):
     def shoot(self):
         # instantiate Shot at Player position
         self.shots.append(shot.Shot(self.c, self.x, self.y))
-        winsound.PlaySound(r"Sound\Laser.wav",winsound.SND_FILENAME|winsound.SND_ASYNC)
 
 
     def kill(self):
@@ -148,7 +147,6 @@ class Player(object):
         for i in range(15):
             particle.Particle(self.c, self.x,self.y, random.randrange(2,5))
         self.dead = (True if self.lives <= 0 else False)
-        winsound.PlaySound(r"Sound\Explosion.wav",winsound.SND_FILENAME|winsound.SND_ASYNC)
         # if dead, delete self from canvas, remove all shots
         if self.dead:
             self.c.delete(self.me)

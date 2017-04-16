@@ -1,7 +1,6 @@
 
 from . import particle
-
-import threading, time, random, math, winsound
+import threading, time, random, math
 
 class Asteroid(object):
     'Object for Asteroids'
@@ -133,6 +132,5 @@ class Asteroid(object):
         for i in range(10):
             particle.Particle(self.c, self.x,self.y, size=random.randrange(1,5))
         self.dead = True
-        winsound.PlaySound(r"Sound\Explosion.wav",winsound.SND_FILENAME|winsound.SND_ASYNC)
         self.m.join(1)
         self.c.delete(self.me)

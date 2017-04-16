@@ -1,6 +1,5 @@
 
-import time
-import threading
+import time, threading
 
 class Shot(object):
     'Object for Shots'
